@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * print_char - Function that prints a single character
@@ -6,9 +6,11 @@
  * @c: The character to print. (character format specifier)
  * Return: 1
  */
-C
 int print_char(char *c)
 {
+	if (c == NULL)
+		return (0);
+
 	_putchar(*c);
 	return (1);
 }

@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * print_string - Function that prints a single character
@@ -12,6 +12,10 @@
 int print_string(char *s)
 {
 	unsigned int i = 0;
+
+	if (s == NULL)
+		return (i);
+
 	while (*(s + i))
 	{
 		_putchar(*(s + i));

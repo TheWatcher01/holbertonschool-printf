@@ -5,8 +5,11 @@
  * @c: a char to print
  * Return: 1 (Always)
  */
-int print_percent(char c)
+int print_percent(char *c)
 {
-	_putchar(c);
+	if (c == NULL)
+		return (0);
+
+	_putchar(*c);
 	return (1);
 }
