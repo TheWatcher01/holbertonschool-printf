@@ -9,16 +9,17 @@
  * Return: How many characters printed.
  */
 
-int print_string(char *s)
+int print_string(void *s)
 {
+	char *str = (char *) s;
 	unsigned int i = 0;
 
 	if (s == NULL)
 		return (i);
 
-	while (*(s + i))
+	while (*(str + i))
 	{
-		_putchar(*(s + i));
+		_putchar(*(str + i));
 		i++;
 	}
 	return (i);

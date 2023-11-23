@@ -5,11 +5,11 @@
  * @c: a char to print
  * Return: 1 (Always)
  */
-int print_percent(char *c)
+int print_percent(__attribute__((unused)) void *c )
 {
 	if (c == NULL)
 		return (0);
 
-	_putchar(*c);
+	_putchar('%');
 	return (1);
 }
