@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * print_percent - function that handle the %% specifier
- * @va: is always NULL
- * Return: 1 (Always)
+ * print_percent - Prints a percent sign.
+ * @va: The argument value, which is always unused.
+ *
+ * Return: Always returns 1.
  */
+
 int print_percent(va_list __attribute__((unused)) va)
 {
 	_putchar('%');
