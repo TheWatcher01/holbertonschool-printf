@@ -1,8 +1,8 @@
 <img src="https://urlz.fr/oCru/"/>
 
-#Create a Printf Function
+# Create a Printf Function
 
-##Project Overview
+## Project Overview
 
 This project aims to recreate the printf function, a standard library function in the C programming language. The printf function allows you to display formatted text onto the user interface.
 
@@ -16,7 +16,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ```
 
-##Requirements
+## Requirements
 
 The following requirements must be met for this project:
 
@@ -79,7 +79,7 @@ int main(void) {
 
 This code demonstrates how to use the _printf function to format and display various types of data, including integers, characters, strings, and addresses.
 
-##Expected Output
+## Expected Output
 
 When executed, the provided code will produce the following output:
 
@@ -98,11 +98,11 @@ Unsigned octalCreate a Printf Function
 
 ```
 
-##Project Overview
+## Project Overview
 
 This project aims to recreate the printf function, a standard library function in the C programming language. The printf function allows you to display formatted text onto the user interface.
 
-##Compilation
+## Compilation
 
 To compile the files that make up the printf function, use the following command:
 
@@ -112,7 +112,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ```
 
-##Requirements
+## Requirements
 
 The following requirements must be met for this project:
 
@@ -130,7 +130,7 @@ The following requirements must be met for this project:
 
 **Header Inclusion:** Include the "main.h" header file in all .c files to access necessary declarations and definitions.
 
-##Example Usage
+## Example Usage
 
 **Consider the following input code:**
 
@@ -174,7 +174,7 @@ int main(void) {
 
 This code demonstrates how to use the _printf function to format and display various types of data, including integers, characters, strings, and addresses.
 
-##Expected Output
+## Expected Output
 
 **When executed, the provided code will produce the following output:**
 
