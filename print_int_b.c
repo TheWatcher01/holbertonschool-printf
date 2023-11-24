@@ -12,7 +12,7 @@ int print_adress(va_list va)
 	int n_digit = 0, i = 0, r = 0;
 	char buffer[100];
 
-	while (i < 98)
+	while (1)
 	{
 		r = addr % 16;
 		if (r < 10)
@@ -22,17 +22,12 @@ int print_adress(va_list va)
 
 		addr /= 16;
 		if (addr == 0)
-		{
-			i++;
-			buffer[i] = 'x';
-			i++;
-			buffer[i] = '0';
-			i++;
 			break;
-		}
 		i++;
 	}
-	i -= 1;
+	_putchar('0');
+	_putchar('x');
+	n_digit += 2;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
