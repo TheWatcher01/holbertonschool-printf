@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_adress - function to
- * print hexadecimal value
- * @va: argumant value
- * Return: integer
+ * print_address - Prints the hexadecimal representation of a memory address.
+ * @va: Argument value.
+ *
+ * Return: Number of characters printed.
  */
 int print_adress(va_list va)
 {
@@ -55,9 +55,10 @@ int print_adress(va_list va)
 }
 
 /**
- * n_u_digit - number of digits inside
- * @n: number
- * Return: an integer value
+ * n_u_digit - Calculates the number of digits in an unsigned integer.
+ * @n: The unsigned integer.
+ *
+ * Return: The number of digits.
  */
 int n_u_digit(unsigned int n)
 {
