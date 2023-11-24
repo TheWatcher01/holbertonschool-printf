@@ -1,10 +1,14 @@
 #include "main.h"
 
 /**
- * get_print_function - return a function that print values
+ * get_print_function - Retrieves a function that prints values according
+ * to a specified format.
+ *
  * @format: a string value that contains a format specifier
+ *
  * Return: a function used to print @format values
  */
+
 int (*get_print_function(char *format))(va_list)
 {
 	int i = 0;
