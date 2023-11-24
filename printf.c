@@ -2,11 +2,19 @@
 
 int call(char const *format, int i, char *format_specifier,
 		int (*function)(va_list), int result, va_list va);
+
 /**
- * _printf - equivalent of printf in standard
- * @format: format
- * Return: number of char printed
+ * _printf - Custom implementation of the standard `printf` function
+ * @format: Format string to be parsed and applied to the supplied arguments
+ *
+ * This function emulates the functionality of the standard `printf` function,
+ * allowing for formatted output to the console. It takes a format string as input
+ * along with a variable number of arguments and produces a string that corresponds
+ * to the format specifiers and given input values.
+ *
+ * Return: Number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -22,15 +30,22 @@ int _printf(const char *format, ...)
 }
 
 /**
- * call - function to break _print
- * @format: format string
- * @format_specifier: string value
- * @function: function
- * @values: va_list
- * @result: int
- * @i: integer
- * Return: integer
+ * call - Recursive function to process the format string and apply format specifiers
+ * @format: Format string to be parsed
+ * @i: Current index within the format string
+ * @format_specifier: Pointer to the identified format specifier string
+ * @function: Pointer to the corresponding print function associated with the format specifier
+ * @values: Variable argument list containing the values to be formatted
+ * @result: Accumulated count of characters printed
+ *
+ * This recursive function traverses the format string, identifying format specifiers
+ * and invoking the corresponding print function to handle the associated argument.
+ * It tracks the index within the format string and the accumulated count of
+ * characters printed.
+ *
+ * Return: Updated count of characters printed
  */
+
 int call(char const *format, int i, char *format_specifier,
 		int (*function)(va_list), int result, va_list values)
 {
@@ -80,11 +95,19 @@ int call(char const *format, int i, char *format_specifier,
 	}
 	return (result);
 }
+
 /**
- * get_format - get the format specifier
- * @str: buffer that contains the format specifier
- * Return: the string that contains the format
+ * get_format - Identifies the format specifier string from the format string
+ * @str: Pointer to the substring containing the potential format specifier
+ *
+ * This function searches for a matching format specifier string among a predefined
+ * set of supported format specifiers. It compares the substring starting at the
+ * provided pointer to the known format specifiers and returns the corresponding
+ * string if a match is found.
+ *
+ * Return: Pointer to the matching format specifier string, or NULL if no match found
  */
+
 char *get_format(const char *str)
 {
 	int key = -1, i = 0;
@@ -108,5 +131,4 @@ char *get_format(const char *str)
 	if (key == -1)
 		return (NULL);
 
-	return (*(formats + key));
-}
+	return (*(formats + key))}
