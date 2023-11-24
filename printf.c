@@ -43,6 +43,10 @@ int call(char const *format, int i, char *format_specifier,
 			_putchar(*(format + i));
 			result++;
 		}
+		if (*(format + i))
+		{
+			return (-1);
+		}
 		if (*(format + i) == '%')
 		{
 			format_specifier = get_format(format + i);

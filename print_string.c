@@ -22,6 +22,7 @@ int print_string(va_list va)
 			_putchar(*str);
 			str++;
 		}
+		return (-1);
 	}
 
 	while (*(str + i))
