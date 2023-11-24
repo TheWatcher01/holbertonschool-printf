@@ -45,11 +45,11 @@ int print_int(va_list va)
 }
 
 /**
- * print_u - print an unsigned int
+ * print_unsigned_int - print an unsigned int
  * @va: an argument
  * Return: an integer
  */
-int print_u(va_list va)
+int print_unsigned_int(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
 	int n_digit = n_u_digit(n);
@@ -81,21 +81,126 @@ int print_u(va_list va)
 }
 
 /**
- * n_u_digit - number of digits inside
- * @n: number
- * Return: an integer value
+ * print_unsigned_octal - print octal value
+ * @va: argument value
+ * Return: number of digits;
  */
-int n_u_digit(unsigned int n)
+int print_unsigned_octal(va_list va)
 {
+	unsigned int n = va_arg(va, unsigned int);
+	int n_digit = 0;
 	int i = 0;
+	char buffer[100];
 
-	if (n == 0)
-		return (1);
-
-	while (n > 0)
+	while (i < 100)
 	{
-		n /= 10;
+		buffer[i] = ('0' + (n % 8));
+		n /= 8;
 		i++;
 	}
-	return (i);
+
+	i -= 1;
+	while (i >= 0)
+	{
+		if (*(buffer + i) != '0')
+		{
+			while (i >= 0)
+			{
+				n_digit++;
+				_putchar(*(buffer + i));
+				i--;
+			}
+		}
+		i--;
+	}
+
+	return (n_digit);
+}
+
+/**
+ * print_unsigned_hexadecimal - function to
+ * print hexadecimal value
+ * @va: argumant value
+ * Return: integer
+ */
+int print_unsigned_hexadecimal(va_list va)
+{
+	unsigned int n = va_arg(va, unsigned int);
+	int n_digit = 0;
+	int i = 0;
+	int r = 0;
+	char buffer[100];
+
+	while (i < 100)
+	{
+		r = n % 16;
+		if (r < 10)
+			buffer[i] = '0' + r;
+		else
+			buffer[i] = 'a' + (r - 10);
+
+		n /= 16;
+		i++;
+	}
+
+	i -= 1;
+	while (i >= 0)
+	{
+		if (*(buffer + i) != '0')
+		{
+			while (i >= 0)
+			{
+				n_digit++;
+				_putchar(*(buffer + i));
+				i--;
+			}
+		}
+		i--;
+	}
+
+	return (n_digit);
+}
+
+/**
+ * print_unsigned_Hexadecimal - function to
+ * print hexadecimal value
+ * @va: argumant value
+ * Return: integer
+ */
+int print_unsigned_Hexadecimal(va_list va)
+{
+	unsigned int n = va_arg(va, unsigned int);
+	int n_digit = 0;
+	int i = 0;
+	int r = 0;
+	char buffer[100];
+
+	while (i < 100)
+	{
+		r = n % 16;
+		if (r < 10)
+			buffer[i] = '0' + r;
+		else
+			buffer[i] = 'A' + (r - 10);
+
+		n /= 16;
+		i++;
+	}
+
+	i -= 1;
+	while (i >= 0)
+	{
+		if (*(buffer + i) != '0')
+		{
+			while (i >= 0)
+			{
+				n_digit++;
+				_putchar(*(buffer + i));
+				i--;
+			}
+		}
+		i--;
+	}
+
+	return (n_digit);
 }
