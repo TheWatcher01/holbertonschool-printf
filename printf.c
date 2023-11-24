@@ -54,8 +54,7 @@ int _printf(const char *format, ...)
  */
 char *get_format(const char *str)
 {
-	int len = 0, key = -1, i = 0;
-	char *copy;
+	int key = -1, i = 0;
 	char *formats[] = {"%c", "%d", "%E", "%e", "%f", "%G", "%g", "%i",
 		"%ld", "%li", "%lf", "%Lf", "%lu", "%lld", "%lli", "%llu",
 		"%o", "%p", "%u", "%s", "%x", "%X", "%n", "%%", NULL};
