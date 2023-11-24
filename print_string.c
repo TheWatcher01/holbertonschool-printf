@@ -1,12 +1,10 @@
 #include "main.h"
 
 /**
- * print_string - Function that prints a single character
- * (string format specifier) to the standard output streams.
+ * print_string - Prints a string of characters to the standard output.
+ * @va: Argument value containing the string to be printed.
  *
- * @va: The character to print. (string format specifier)
- *
- * Return: How many characters printed.
+ * Return: The number of characters printed.
  */
 
 int print_string(va_list va)
