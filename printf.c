@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printf - equivalent of printf in standard
@@ -30,15 +31,19 @@ int _printf(const char *format, ...)
 			if (format_specifier != NULL)
 			{
 				function = get_print_function(format_specifier);
-				if (is_string_equals(format_specifier, "%%") == 1)
+				if (function != NULL)
 				{
-					result += function(NULL);
+					if (is_string_equals(format_specifier, "%%") == 1)
+					{
+						result += function(NULL);
+					}
+					else
+					{
+						printf("YOOOO");
+						result += function(values);
+					}
+					i += (_length(format_specifier) - 1);
 				}
-				else
-				{
-					result += function(values);
-				}
-				i += (_length(format_specifier) - 1);
 			}
 		}
 		i++;
