@@ -1,4 +1,4 @@
-<img src="https://github.com/TheWatcher01/holbertonschool-printf/blob/Ted_Code/printf_flowchart_pics.jpeg" alt=holberton_logo/>
+![holberton_logo](https://github.com/TheWatcher01/holbertonschool-printf/blob/Ted_Code/printf_flowchart_pics.jpeg)
 
 # Create a Printf Function
 
