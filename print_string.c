@@ -15,7 +15,14 @@ int print_string(va_list va)
 	char *str = va_arg(va, char *);
 
 	if (str == NULL)
-		return (i);
+	{
+		str = "(null)";
+		while (*str)
+		{
+			_putchar(*str);
+			str++;
+		}
+	}
 
 	while (*(str + i))
 	{

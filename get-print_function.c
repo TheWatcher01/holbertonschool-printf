@@ -9,7 +9,7 @@ int (*get_print_function(char *format))(va_list)
 {
 	int i = 0;
 	int (*func[])(va_list) = {print_char, print_string,
-		print_percent, print_int, print_unsigned_int, print_unsigned_int,
+		print_percent, print_int, print_int, print_unsigned_int,
 		print_unsigned_octal, print_unsigned_hexadecimal, print_unsigned_Hexadecimal,
 		print_adress, NULL};
 	char *formats[] = {"%c", "%s", "%%", "%d", "%i", "%u", "%o",
