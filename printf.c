@@ -62,6 +62,10 @@ int call(char const *format, int i, char *format_specifier,
 					i += (_length(format_specifier) - 1);
 				}
 			}
+			else
+			{
+				_putchar('%');
+			}
 		}
 		i++;
 	}
@@ -75,7 +79,9 @@ int call(char const *format, int i, char *format_specifier,
 char *get_format(const char *str)
 {
 	int key = -1, i = 0;
-	char *formats[] = {"%c", "%d", "%E", "%e", "%f", "%G", "%g", "%i",
+	char *formats[] = {"%c", "%s", "%%", "%d", "%i", NULL};
+	char __attribute__((unused))*formats_all[] = {"%c", "%d", "%E",
+		"%e", "%f", "%G", "%g", "%i",
 		"%ld", "%li", "%lf", "%Lf", "%lu", "%lld", "%lli", "%llu",
 		"%o", "%p", "%u", "%s", "%x", "%X", "%n", "%%", NULL};
 
