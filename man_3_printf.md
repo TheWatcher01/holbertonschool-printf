@@ -57,7 +57,8 @@ The following examples demonstrate how to use the `_printf` function to format a
 
 ```C
 int n = _printf("Hello, %s!\n", "world");
-if (n < 0) {
+if (n < 0) 
+{
 	perror("_printf");
 	exit(1);
 }
@@ -73,7 +74,8 @@ Hello, world!
 
 ```C
 int n = _printf("The answer is: %d\n", 777);
-if (n < 0) {
+if (n < 0) 
+{
 	perror("_printf");
 	exit(1);
 }
@@ -89,7 +91,8 @@ The answer is: 777
 
 ```C
 int n = _printf("Pi is approximately: %f\n", 3.1415926535);
-if (n < 0) {
+if (n < 0) 
+{
 	perror("_printf");
 	exit(1);
 }
