@@ -20,19 +20,19 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 The following requirements must be met for this project:
 
-**1.Text Editor:** Use the Vi text editor to create and modify the source code.
+**1. Text Editor:** Use the Vi text editor to create and modify the source code.
 
-**2.Operating System:** The project must be developed and compiled on Ubuntu 20.04 LTS, a Linux distribution.
+**2. Operating System:** The project must be developed and compiled on Ubuntu 20.04 LTS, a Linux distribution.
 
-**3.Coding Style:** Adhere to the Betty style guidelines for consistent and readable code.
+**3. Coding Style:** Adhere to the Betty style guidelines for consistent and readable code.
 
-**4.Global Variables:** Avoid using global variables; instead, use local variables within functions.
+**4. Global Variables:** Avoid using global variables; instead, use local variables within functions.
 
-**5.File Endings:** Ensure that all source code files (.c files) end with a newline character (\n).
+**5. File Endings:** Ensure that all source code files (.c files) end with a newline character (\n).
 
-**6.Function Limits:** Limit the number of functions within each source code file to five or less.
+**6. Function Limits:** Limit the number of functions within each source code file to five or less.
 
-**7.Header Inclusion:** Include the "main.h" header file in all .c files to access necessary declarations and definitions.
+**7. Header Inclusion:** Include the "main.h" header file in all .c files to access necessary declarations and definitions.
 
 **Example Usage**
 
