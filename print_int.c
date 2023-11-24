@@ -8,16 +8,31 @@
 int print_int(va_list va)
 {
 	int n = va_arg(va, int);
-	int n_digit = n_int_digit(n);
+	int n_digit = 0;
+	char buffer[5];
 	int i = 0;
-	int value = 0;
 
-	while (i < n_digit)
+	if (n < 0)
 	{
-		value = ((n - (value * (10 * (n_digit - i - 1)))) % (10 * (n_digit - i - 1)));
-		_putchar('0' + value);
-		i++;
+		_putchar('-');
+		n *= -1;
 	}
+
+	n_digit = n_u_digit((unsigned int) n);
+
+	while (i < 5)
+        {
+                buffer[i] = ('0' + (n % 10));
+                n /= 10;
+                i++;
+        }
+
+        while (i >= 0)
+        {
+                _putchar(*(buffer + i));
+                i--;
+        }
+
 	return (n_digit);
 }
 
@@ -29,35 +44,24 @@ int print_int(va_list va)
 int print_u(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = n_u_digit(n), i = 0, value = 0;
-
-	while (i < n_digit)
-        {
-                value = ((n - (value * (10 * (n_digit - i - 1)))) % (10 * (n_digit - i - 1)));
-                _putchar('0' + value);
-                i++;
-        }
-        return (n_digit);
-}
-
-/**
- * n_int_digit - number of digits
- * @n: the number
- * Return: an integer value
- */
-int n_int_digit(int n)
-{
+	int n_digit = n_u_digit(n);
 	int i = 0;
+	char buffer[6];
 
-	if (n == 0)
-		return (1);
-
-	while (n > 0)
+	while (i < 5)
 	{
+		buffer[i] = ('0' + (n % 10));
 		n /= 10;
 		i++;
 	}
-	return (i);
+
+	while (i >= 0)
+	{
+		_putchar(*(buffer + i));
+		i--;
+	}
+
+	return (n_digit);
 }
 
 /**
@@ -68,7 +72,7 @@ int n_int_digit(int n)
 int n_u_digit(unsigned int n)
 {
 	int i = 0;
-	
+
 	if (n == 0)
 		return (1);
 

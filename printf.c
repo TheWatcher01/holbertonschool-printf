@@ -1,6 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 
+int call(char const *format, int i, char *format_specifier,
+		int (*function)(va_list), int result, va_list va);
 /**
  * _printf - equivalent of printf in standard
  * @format: format
@@ -9,12 +10,30 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	char *format_specifier;
-	int (*function)(va_list);
+	char *format_specifier = NULL;
+	int (*function)(va_list) = NULL;
 	va_list values;
 	int result = 0;
 
 	va_start(values, format);
+	result = call(format, i, format_specifier, function, result, values);
+	va_end(values);
+	return (result);
+}
+
+/**
+ * call - function to break _print
+ * @format: format string
+ * @format_specifier: string value
+ * @function: function
+ * @values: va_list
+ * @result: int
+ * @i: integer
+ * Return: integer
+ */
+int call(char const *format, int i, char *format_specifier,
+		int (*function)(va_list), int result, va_list values)
+{
 	if (format == NULL)
 		return (0);
 	while (*(format + i))
@@ -24,7 +43,6 @@ int _printf(const char *format, ...)
 			_putchar(*(format + i));
 			result++;
 		}
-
 		if (*(format + i) == '%')
 		{
 			format_specifier = get_format(format + i);
@@ -39,7 +57,6 @@ int _printf(const char *format, ...)
 					}
 					else
 					{
-						printf("YOOOO");
 						result += function(values);
 					}
 					i += (_length(format_specifier) - 1);
@@ -48,10 +65,8 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(values);
 	return (result);
 }
-
 /**
  * get_format - get the format specifier
  * @str: buffer that contains the format specifier
