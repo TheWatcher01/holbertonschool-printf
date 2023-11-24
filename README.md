@@ -1,4 +1,4 @@
-<img src="_Logigramme Printf Project.jpeg" alt= holberton_logo/>
+<img src="https://github.com/TheWatcher01/holbertonschool-printf/blob/Ted_Code/holberton-logo_2.png" alt= holberton_logo/>
 
 # Create a Printf Function
 
