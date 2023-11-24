@@ -2,14 +2,11 @@
 
 /**
  * print_percent - function that handle the %% specifier
- * @c: a char to print
+ * @va: is always NULL
  * Return: 1 (Always)
  */
-int print_percent(__attribute__((unused)) void *c )
+int print_percent(va_list __attribute__((unused)) va)
 {
-	if (c == NULL)
-		return (0);
-
 	_putchar('%');
 	return (1);
 }

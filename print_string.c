@@ -4,17 +4,17 @@
  * print_string - Function that prints a single character
  * (string format specifier) to the standard output streams.
  *
- * @s: The character to print. (string format specifier)
+ * @va: The character to print. (string format specifier)
  *
  * Return: How many characters printed.
  */
 
-int print_string(void *s)
+int print_string(va_list va)
 {
-	char *str = (char *) s;
-	unsigned int i = 0;
+	int i = 0;
+	char *str = va_arg(va, char *);
 
-	if (s == NULL)
+	if (str == NULL)
 		return (i);
 
 	while (*(str + i))

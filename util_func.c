@@ -6,7 +6,7 @@
  * @b: string value
  * Return: 1(true) 0(false)
  */
-int is_string_equals(char *a, char *b)
+int is_string_equals(const char *a, const char *b)
 {
 	unsigned int i = 0;
 
@@ -22,7 +22,12 @@ int is_string_equals(char *a, char *b)
 	return (1);
 }
 
-int _length(char *str)
+/**
+ * _length - compute the length of @str
+ * @str: a string value
+ * Return: length of @str
+ */
+int _length(const char *str)
 {
 	int i = 0;
 

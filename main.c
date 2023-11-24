@@ -8,6 +8,6 @@ int main()
 	char *d = "HOLLLA";
 	char i = 'T';
 	
-	_printf("%c", i);
+	_printf("%c\n%s\n%%", i, d);
 	return (0);
 }
