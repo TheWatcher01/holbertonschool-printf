@@ -72,7 +72,9 @@ int call(char const *format, int i, char *format_specifier,
 				}
 			}
 			else
-				_putchar('%');
+			{
+				return (-1);
+			}
 		}
 		i++;
 	}
