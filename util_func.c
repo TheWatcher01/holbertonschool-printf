@@ -1,11 +1,14 @@
 #include "main.h"
 
 /**
- * is_string_equals - check if two string are identicals
- * @a: string value
- * @b: string value
- * Return: 1(true) 0(false)
+ * Checks whether two strings are identical.
+ *
+ * @a: The first string.
+ * @b: The second string.
+ *
+ * Return: 1 if the strings are identical, 0 otherwise.
  */
+
 int is_string_equals(const char *a, const char *b)
 {
 	unsigned int i = 0;
@@ -23,9 +26,11 @@ int is_string_equals(const char *a, const char *b)
 }
 
 /**
- * _length - compute the length of @str
- * @str: a string value
- * Return: length of @str
+ * Computes the length of a string.
+ *
+ * @param str: The string to be measured.
+ *
+ * Return: The length of the string.
  */
 int _length(const char *str)
 {
