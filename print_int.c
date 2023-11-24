@@ -21,17 +21,26 @@ int print_int(va_list va)
 	n_digit = n_u_digit((unsigned int) n);
 
 	while (i < 5)
-        {
-                buffer[i] = ('0' + (n % 10));
-                n /= 10;
-                i++;
-        }
+	{
+		buffer[i] = ('0' + (n % 10));
+		n /= 10;
+		i++;
+	}
 
-        while (i >= 0)
-        {
-                _putchar(*(buffer + i));
-                i--;
-        }
+	i = i - 1;
+
+	while (i >= 0)
+	{
+		if (*(buffer + i) != '0')
+		{
+			while (i >= 0)
+			{
+				_putchar(*(buffer + i));
+				i--;
+			}
+		}
+		i--;
+	}
 
 	return (n_digit);
 }
@@ -55,9 +64,18 @@ int print_u(va_list va)
 		i++;
 	}
 
+	i = i - 1;
+
 	while (i >= 0)
 	{
-		_putchar(*(buffer + i));
+		if (*(buffer + i) != '0')
+		{
+			while (i >= 0)
+			{
+				_putchar(*(buffer + i));
+				i--;
+			}
+		}
 		i--;
 	}
 

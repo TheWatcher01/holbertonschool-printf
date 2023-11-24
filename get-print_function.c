@@ -8,7 +8,8 @@
 int (*get_print_function(char *format))(va_list)
 {
 	int i = 0;
-	int (*func[])(va_list) = {print_char, print_string, print_percent, print_int, print_u, NULL};
+	int (*func[])(va_list) = {print_char, print_string,
+		print_percent, print_int, print_u, NULL};
 	char *formats[] = {"%c", "%s", "%%", "%d", "%i"};
 
 	while (*(func + i) != NULL)
