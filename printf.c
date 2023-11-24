@@ -107,7 +107,6 @@ int call(char const *format, int i, char *format_specifier,
  *
  * Return: Pointer to the matching format specifier string, or NULL if no match found
  */
-
 char *get_format(const char *str)
 {
 	int key = -1, i = 0;
