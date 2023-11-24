@@ -4,9 +4,10 @@
  * get_print_function - Retrieves a function that prints values according
  * to a specified format.
  *
- * @format: a string value that contains a format specifier
+ * @format: A string value containing a format specifier.
  *
- * Return: a function used to print @format values
+ * Return: A function pointer to the appropriate printing function for
+ * the given format, or NULL if no matching function is found.
  */
 
 int (*get_print_function(char *format))(va_list)
