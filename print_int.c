@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * print_int - print an int value
- * @va: an argument
- * Return: an integer value;
+ * print_int - Prints an integer value.
+ * @va: Argument value.
+ *
+ * Return: Number of digits printed.
  */
+
 int print_int(va_list va)
 {
 	int n = va_arg(va, int);
@@ -45,10 +47,12 @@ int print_int(va_list va)
 }
 
 /**
- * print_unsigned_int - print an unsigned int
- * @va: an argument
- * Return: an integer
+ * print_unsigned_int - Prints an unsigned integer value.
+ * @va: Argument value.
+ *
+ * Return: Number of digits printed.
  */
+
 int print_unsigned_int(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
@@ -81,9 +85,10 @@ int print_unsigned_int(va_list va)
 }
 
 /**
- * print_unsigned_octal - print octal value
- * @va: argument value
- * Return: number of digits;
+ * print_unsigned_octal - Prints an unsigned octal value.
+ * @va: Argument value.
+ *
+ * Return: Number of digits printed.
  */
 int print_unsigned_octal(va_list va)
 {
@@ -118,10 +123,10 @@ int print_unsigned_octal(va_list va)
 }
 
 /**
- * print_unsigned_hexadecimal - function to
- * print hexadecimal value
- * @va: argumant value
- * Return: integer
+ * print_unsigned_hex - Prints an unsigned hexadecimal value.
+ * @va: Argument value.
+ *
+ * Return: Number of digits printed.
  */
 int print_unsigned_hexadecimal(va_list va)
 {
