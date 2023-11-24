@@ -11,7 +11,17 @@ int print_adress(va_list va)
 	intptr_t addr = (intptr_t) va_arg(va, void *);
 	int n_digit = 0, i = 0, r = 0;
 	char buffer[100];
+	char *nil = "(nil)";
 
+	if (addr == 0)
+	{
+		while (*(nil + i))
+		{
+			_putchar(*(nil + i));
+			i++;
+		}
+		return (i);
+	}
 	while (1)
 	{
 		r = addr % 16;
