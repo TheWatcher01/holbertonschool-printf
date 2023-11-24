@@ -1,4 +1,4 @@
-![holberton_logo]('_Logigramme Printf Project.jpeg')
+<img src="_Logigramme Printf Project.jpeg" alt= holberton_logo/>
 
 # Create a Printf Function
 
