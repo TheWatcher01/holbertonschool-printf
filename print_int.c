@@ -2,9 +2,9 @@
 
 /**
  * print_int - Prints an integer value.
- * @va: Argument value.
+ * @va: The argument value to be printed.
  *
- * Return: Number of digits printed.
+ * Return: The number of digits printed.
  */
 
 int print_int(va_list va)
@@ -48,9 +48,9 @@ int print_int(va_list va)
 
 /**
  * print_unsigned_int - Prints an unsigned integer value.
- * @va: Argument value.
+ * @va: The argument value to be printed.
  *
- * Return: Number of digits printed.
+ * Return: The number of digits printed.
  */
 
 int print_unsigned_int(va_list va)
@@ -85,10 +85,10 @@ int print_unsigned_int(va_list va)
 }
 
 /**
- * print_unsigned_octal - Prints an unsigned octal value.
- * @va: Argument value.
+ * print_unsigned_int - Prints an unsigned integer value.
+ * @va: The argument value to be printed.
  *
- * Return: Number of digits printed.
+ * Return: The number of digits printed.
  */
 int print_unsigned_octal(va_list va)
 {
@@ -124,9 +124,9 @@ int print_unsigned_octal(va_list va)
 
 /**
  * print_unsigned_hex - Prints an unsigned hexadecimal value.
- * @va: Argument value.
+ * @va: The argument value to be printed.
  *
- * Return: Number of digits printed.
+ * Return: The number of digits printed.
  */
 int print_unsigned_hexadecimal(va_list va)
 {
@@ -167,10 +167,10 @@ int print_unsigned_hexadecimal(va_list va)
 }
 
 /**
- * print_unsigned_Hexadecimal - function to
- * print hexadecimal value
- * @va: argumant value
- * Return: integer
+ * print_unsigned_hex - Prints an unsigned hexadecimal value.
+ * @va: The argument value to be printed.
+ *
+ * Return: The number of digits printed.
  */
 int print_unsigned_Hexadecimal(va_list va)
 {
