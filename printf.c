@@ -35,7 +35,7 @@ int call(char const *format, int i, char *format_specifier,
 		int (*function)(va_list), int result, va_list values)
 {
 	if (format == NULL)
-		return (0);
+		return (-1);
 	while (*(format + i))
 	{
 		if (*(format + i) != '%')

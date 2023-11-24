@@ -9,7 +9,7 @@ int print_int(va_list va)
 {
 	int n = va_arg(va, int);
 	int n_digit = 0;
-	char buffer[5];
+	char buffer[12];
 	int i = 0;
 
 	if (n < 0)
@@ -20,15 +20,14 @@ int print_int(va_list va)
 
 	n_digit = n_u_digit((unsigned int) n);
 
-	while (i < 5)
+	while (i < 12)
 	{
 		buffer[i] = ('0' + (n % 10));
 		n /= 10;
 		i++;
 	}
 
-	i = i - 1;
-
+	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
@@ -55,17 +54,16 @@ int print_u(va_list va)
 	unsigned int n = va_arg(va, unsigned int);
 	int n_digit = n_u_digit(n);
 	int i = 0;
-	char buffer[6];
+	char buffer[12];
 
-	while (i < 5)
+	while (i < 12)
 	{
 		buffer[i] = ('0' + (n % 10));
 		n /= 10;
 		i++;
 	}
 
-	i = i - 1;
-
+	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
