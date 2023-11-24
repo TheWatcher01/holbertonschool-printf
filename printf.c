@@ -43,7 +43,7 @@ int call(char const *format, int i, char *format_specifier,
 			_putchar(*(format + i));
 			result++;
 		}
-		if (*(format + i))
+		if (*(format + i) == '%' && *(format + i + 1) == '\0')
 		{
 			return (-1);
 		}
