@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Checks whether two strings are identical.
+ * is_string_equals - Function checks whether two strings are identical.
  *
  * @a: The first string.
  * @b: The second string.
@@ -26,9 +26,9 @@ int is_string_equals(const char *a, const char *b)
 }
 
 /**
- * Computes the length of a string.
+ * _length - Computes the length of a string.
  *
- * @param str: The string to be measured.
+ * @str: The string to be measured.
  *
  * Return: The length of the string.
  */
