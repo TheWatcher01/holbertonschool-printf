@@ -130,5 +130,4 @@ char *get_format(const char *str)
 	if (key == -1)
 		return (NULL);
 
-	return (*(formats + key));
-}
+	return (*(formats + key))}
