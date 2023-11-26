@@ -1,15 +1,21 @@
 #include "main.h"
 
 /**
- * print_char - Outputs a single character to the console.
+ * print_character - Prints a single character to the standard output.
  *
- * @va: A variable argument list containing the character to print.
+ * @character: The character to be printed.
  *
- * Return: 1 (number of characters printed).
+ * Return: 1, indicating that only one character was printed.
  */
 
-int print_char(va_list va)
+int print_character(va_list args)
 {
-	_putchar((char) va_arg(va, int));
+	/** Read the character to be printed from the argument list*/
+	char character = (char) va_arg(args, int);
+
+	/** Print the character to the standard output*/
+	_putchar(character);
+
+	/** Return 1 to indicate that only one character was printed*/
 	return (1);
 }
