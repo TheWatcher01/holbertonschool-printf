@@ -85,10 +85,16 @@ int print_unsigned_int(va_list va)
 }
 
 /**
- * print_unsigned_int - Prints an unsigned integer value.
- * @va: The argument value to be printed.
+ * print_unsigned_octal - Converts and prints unsigned integer value in octal
+ * format.
+ *
+ * @va: The va_list containing the unsigned integer value to be printed.
  *
  * Return: The number of digits printed.
+ *
+ * This function converts the provided unsigned integer value to its octal
+ * representation and prints it to the standard output.
+ * It handles leading zeros and ensures that no trailing zeros are printed.
  */
 int print_unsigned_octal(va_list va)
 {
@@ -123,7 +129,7 @@ int print_unsigned_octal(va_list va)
 }
 
 /**
- * print_unsigned_hex - Prints an unsigned hexadecimal value.
+ * print_unsigned_hexadecimal - Prints an unsigned hexadecimal value.
  * @va: The argument value to be printed.
  *
  * Return: The number of digits printed.
@@ -167,7 +173,7 @@ int print_unsigned_hexadecimal(va_list va)
 }
 
 /**
- * print_unsigned_hex - Prints an unsigned hexadecimal value.
+ * print_unsigned_Hexadecimal - Prints an unsigned hexadecimal value.
  * @va: The argument value to be printed.
  *
  * Return: The number of digits printed.

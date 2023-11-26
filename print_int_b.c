@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_address - Prints the hexadecimal representation of a memory address.
+ * print_adress - Prints the hexadecimal representation of a memory address.
  * @va: Argument value.
  *
  * Return: Number of characters printed.
