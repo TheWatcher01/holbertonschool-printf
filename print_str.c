@@ -17,13 +17,13 @@ int print_string(va_list args)
 	int counter = 0;
 
 	/** Handle the case when the string pointer is NULL*/
-	if (string == NULL) 
+	if (string == NULL)
 	{
 		string = "(null)";
 	}
 
 	/** Iterate through the string until the null terminator is encountered*/
-	while (*string != '\0') 
+	while (*string != '\0')
 	{
 		_putchar(*string);
 		string++;

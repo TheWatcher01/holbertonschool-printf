@@ -3,7 +3,7 @@
 /**
  * print_character - Prints a single character to the standard output.
  *
- * @character: The character to be printed.
+ * @args: The character to be printed.
  *
  * Return: 1, indicating that only one character was printed.
  */
