@@ -13,7 +13,7 @@ int print_adress(va_list va)
 	char buffer[100];
 	char *nil = "(nil)";
 
-	if (addr == 0)
+	if (!addr)
 	{
 		while (*(nil + i))
 		{
