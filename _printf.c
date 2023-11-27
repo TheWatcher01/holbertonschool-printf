@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list argumentList;
-	int i = 0, characterCount = 0,
+	int i = 0, characterCount = 0;
 	int (*formatFunctionPointer)(va_list) = NULL;
 
 	va_start(argumentList, format);
