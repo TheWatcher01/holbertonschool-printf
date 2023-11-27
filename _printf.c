@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_formatted_output - Prints formatted output to the standard output
+ * _printf - Prints formatted output to the standard output
  * based on the specified format string and arguments.
  * @format: The format string containing format specifiers.
  * @...: The variable arguments to be printed according to format specifiers

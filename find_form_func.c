@@ -20,7 +20,7 @@ int (*find_format_function(char formatCharacter))(va_list)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
-		{'d', print_integer},
+		{'d', print_integer}, /** view print_decimal function alternative  */
 		{'i', print_integer},
 		{'\0', NULL}
 	};

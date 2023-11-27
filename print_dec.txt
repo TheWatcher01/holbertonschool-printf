@@ -1,0 +1,47 @@
+#include "main.h"
+
+/**
+ * print_decimal - prints a decimal integer
+ * @args: The va_list object containing the integer argument
+ *
+ * Return: The number of characters printed
+ */
+
+int print_decimal(va_list args)
+{
+	int num = va_arg(args, int);
+	bool is_negative = false;
+	int number_of_characters_printed = 0;
+	int digit_count = 0;
+	int temp_num = num;
+	int i;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num *= -1;
+		is_negative = true;
+		number_of_characters_printed++;
+	}
+
+	while (temp_num > 0)
+	{
+		temp_num /= 10;
+		digit_count++;
+	}
+
+	for (i = 0; i < digit_count; i++)
+	{
+		int digit = num % 10;
+		_putchar('0' + digit);
+		num /= 10;
+		number_of_characters_printed++;
+	}
+
+	if (is_negative)
+	{
+		_putchar('\r');
+	}
+
+	return (number_of_characters_printed);
+}

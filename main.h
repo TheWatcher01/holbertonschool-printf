@@ -4,6 +4,8 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
+#include <string.h>
+#include <stdbool.h>
 /**
  * struct FormatSpecifierAndDisplayFunction - A structure map format specifier
  * to its corresponding display function.
@@ -20,11 +22,15 @@ typedef struct FormatSpecifierAndDisplayFunction
 
 /** Prototypes des fonctions*/
 int _printf(const char *format, ...);
+
 int print_character(va_list args);
+/** int print_decimal(va_list);*/
 int print_integer(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
+
 int _putchar(char c);
+
 int (*find_format_function(char formatCharacter))(va_list arguments);
 
 #endif /** MAIN_H*/
