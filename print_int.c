@@ -24,18 +24,10 @@ int print_int(va_list va)
 			break;
 		i++;
 	}
-
 	while (i >= 0)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				n_digit++;
-				i--;
-			}
-		}
+		_putchar(*(buffer + i));
+		n_digit++;
 		i--;
 	}
 
@@ -64,15 +56,8 @@ int print_unsigned_int(va_list va)
 
 	while (i >= 0)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				n_digit++;
-				i--;
-			}
-		}
+		_putchar(*(buffer + i));
+		n_digit++;
 		i--;
 	}
 	return (n_digit);
@@ -100,15 +85,8 @@ int print_unsigned_octal(va_list va)
 
 	while (i >= 0)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				n_digit++;
-				i--;
-			}
-		}
+		_putchar(*(buffer + i));
+		n_digit++;
 		i--;
 	}
 	return (n_digit);
@@ -142,15 +120,8 @@ int print_unsigned_hexadecimal(va_list va)
 
 	while (i >= 0)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				n_digit++;
-				i--;
-			}
-		}
+		_putchar(*(buffer + i));
+		n_digit++;
 		i--;
 	}
 	return (n_digit);
@@ -181,17 +152,11 @@ int print_unsigned_Hexadecimal(va_list va)
 			break;
 		i++;
 	}
+
 	while (i >= 0)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				n_digit++;
-				i--;
-			}
-		}
+		_putchar(*(buffer + i));
+		n_digit++;
 		i--;
 	}
 	return (n_digit);
