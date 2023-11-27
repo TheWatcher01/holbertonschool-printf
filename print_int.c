@@ -46,7 +46,7 @@ int print_int(va_list va)
 int print_unsigned_int(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = n_u_digit(n), i = 0;
+	int n_digit = 0, i = 0;
 	char buffer[1024];
 
 	while (i < 1024)
