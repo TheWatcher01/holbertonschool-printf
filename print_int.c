@@ -14,11 +14,15 @@ int print_int(va_list va)
 	{
 		n_digit++;
 		_putchar('-');
-		n *= -1;
+		n = -n;
 	}
 	while (i < 1024)
 	{
-		buffer[i] = ('0' + (n % 10));
+		if (n > 0)
+			buffer[i] = ('0' + (n % 10));
+		else if (n < 0)
+			buffer[i] = ('0' - (n % 10));
+
 		n /= 10;
 		if (n == 0)
 			break;
