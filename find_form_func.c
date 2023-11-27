@@ -17,11 +17,9 @@ int (*find_format_function(char formatCharacter))(va_list)
 
 	/** Define an array of format descriptors*/
 	FormatSpecifierAndDisplayFunction formatDescriptors[] = {
-		{'c', print_character},
-		{'s', print_string},
-		{'%', print_percent},
-		{'d', print_int}, /** view print_decimal function alternative  */
-		{'i', print_int},
+		{'c', print_character}, {'s', print_string},
+		{'%', print_percent}, {'d', print_int},
+		{'i', print_int}, {'b', print_unsigned_bin},
 		{'u', print_unsigned_int},
 		{'o', print_unsigned_octal},
 		{'x', print_unsigned_hexadecimal},

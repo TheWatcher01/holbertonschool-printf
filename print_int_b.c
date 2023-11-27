@@ -56,6 +56,34 @@ int print_address(va_list va)
 }
 
 /**
+ * print_unsigned_bin - print unsigned int in binary
+ * @va: arguments
+ * @Return: number characters printed
+ */
+int print_unsigned_bin(va_list va)
+{
+	char buffer[1024];
+	int n = va_arg(va, unsigned int), n_digit = 0, i = 0;
+
+	while (i < 1024)
+	{
+		buffer[i] = '0' + (n % 2);
+		n = (n - (n % 2)) / 2;
+		if (n == 0)
+			break;
+		i++;
+	}
+
+	while (i >= 0)
+	{
+		_putchar(*(buffer + i));
+		n_digit++;
+		i--;
+	}
+	return (n_digit);
+}
+
+/**
  * n_u_digit - number of digits inside
  * @n: number
  * Return: an integer value
