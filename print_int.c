@@ -20,7 +20,7 @@ int print_int(va_list va)
 	{
 		if (n > 0)
 			buffer[i] = ('0' + (n % 10));
-		else if (n < 0)
+		else (n < 0)
 			buffer[i] = ('0' - (n % 10));
 
 		n /= 10;
