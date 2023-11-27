@@ -33,3 +33,41 @@ int print_string(va_list args)
 	/** Return the total length of the printed string*/
 	return (counter);
 }
+
+/**
+ * print_Sring - Prints a null-terminated string to the standard output.
+ * with special print for non printable char.
+ * @args: The argument list containing the string to print.
+ *
+ * Return: The length of the printed string.
+ */
+int print_String(va_list va)
+{
+	char *string = va_arg(args, char *);
+	int counter = 0;
+
+	if (string == NULL)
+	{
+		string = "(null)";
+	}
+
+	while (*string != '\0')
+	{
+		if (*string < 32 || *string >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			_putchar('0');
+			counter += 2;
+			counter += _print("%X", *string);
+		}
+		else
+		{
+			_putchar(*string);
+		}
+		string++;
+		counter++;
+	}
+
+	return (counter);
+}
