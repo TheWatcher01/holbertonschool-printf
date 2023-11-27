@@ -31,13 +31,14 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 				return (-1);
 			if (format[i] == '%')
-				characterCount += _putchar('%');
+				_putchar('%');
 			else
 			{
 				_putchar('%');
 				_putchar(format[i]);
-				characterCount += 2;
+				characterCount++;
 			}
+			characterCount++;
 		}
 		i++;
 	}
