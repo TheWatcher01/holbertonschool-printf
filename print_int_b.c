@@ -63,12 +63,14 @@ int print_address(va_list va)
 int print_unsigned_bin(va_list va)
 {
 	char buffer[1024];
-	int n = va_arg(va, unsigned int), n_digit = 0, i = 0;
+	unsigned int n = va_arg(va, unsigned int);
+	int n_digit = 0, i = 0;
 
 	while (i < 1024)
 	{
 		buffer[i] = '0' + (n % 2);
-		n = (n - (n % 2)) / 2;
+		n -= (n % 2);
+		n /= 2;
 		if (n == 0)
 			break;
 		i++;
