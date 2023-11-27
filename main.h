@@ -1,31 +1,37 @@
-#ifndef HEADER_FILE_H
-#define HEADER_FILE_H
-
-#include <stdlib.h>
+#ifndef MAIN_H
+#define MAIN_H
+#include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 #include <unistd.h>
+#include <string.h>
+#include <stdbool.h>
+/**
+ * struct FormatSpecifierAndDisplayFunction - A structure map format specifier
+ * to its corresponding display function.
+ *
+ * @format_type: The character representing the format specifier.
+ * @displayFunctionPointer: A function pointer to the function that displays
+ * the argument according to the format specifier.
+ */
+typedef struct FormatSpecifierAndDisplayFunction
+{
+	char format_type;
+	int (*displayFunctionPointer)(va_list);
+} FormatSpecifierAndDisplayFunction;
+
+/** Prototypes des fonctions*/
+int _printf(const char *format, ...);
+
+int print_character(va_list args);
+/** int print_decimal(va_list);*/
+int print_integer(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
 
 int _putchar(char c);
 
-int _printf(const char *format, ...);
-int print_char(va_list);
-int print_percent(va_list);
-int print_int(va_list);
-int print_unsigned_int(va_list va);
-int print_unsigned_octal(va_list va);
-int print_unsigned_hexadecimal(va_list va);
-int print_unsigned_Hexadecimal(va_list va);
-int print_adress(va_list va);
+int (*find_format_function(char formatCharacter))(va_list arguments);
 
-int n_int_digit(int);
-int n_u_digit(unsigned int);
+#endif /** MAIN_H*/
 
-int is_string_equals(const char *, const char *);
-int print_string(va_list);
-int (*get_print_function(char *))(va_list);
-char *get_format(const char *str);
-int _length(const char *);
-
-
-
-#endif

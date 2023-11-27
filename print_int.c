@@ -1,206 +1,28 @@
 #include "main.h"
-
 /**
- * print_int - print an int value
- * @va: an argument
- * Return: an integer value;
+ * print_integer - Prints an integer value to the standard output.
+ * @args: The integer value to be printed.
+ * Return: The length of the printed integer representation.
  */
-int print_int(va_list va)
+int print_integer(va_list args)
 {
-	int n = va_arg(va, int);
-	int n_digit = 0;
-	char buffer[12];
-	int i = 0;
+	int integerValue = va_arg(args, int);
+	unsigned int absoluteValue = integerValue, currentDigit = absoluteValue, counter = 0, digitCount = 1;
 
-	if (n < 0)
+	if (integerValue < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		integerValue *= -1;
 	}
-
-	n_digit = n_u_digit((unsigned int) n);
-
-	while (i < 12)
+	while (currentDigit > 9)
 	{
-		buffer[i] = ('0' + (n % 10));
-		n /= 10;
-		i++;
+		currentDigit /= 10;
+		digitCount *= 10;
 	}
-
-	i -= 1;
-	while (i >= 0)
+	while (digitCount >= 1)
 	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				i--;
-			}
-		}
-		i--;
+		counter += _putchar(((absoluteValue / digitCount) % 10) + '0');
+		digitCount /= 10;
 	}
-
-	return (n_digit);
-}
-
-/**
- * print_unsigned_int - print an unsigned int
- * @va: an argument
- * Return: an integer
- */
-int print_unsigned_int(va_list va)
-{
-	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = n_u_digit(n);
-	int i = 0;
-	char buffer[12];
-
-	while (i < 12)
-	{
-		buffer[i] = ('0' + (n % 10));
-		n /= 10;
-		i++;
-	}
-
-	i -= 1;
-	while (i >= 0)
-	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				_putchar(*(buffer + i));
-				i--;
-			}
-		}
-		i--;
-	}
-
-	return (n_digit);
-}
-
-/**
- * print_unsigned_octal - print octal value
- * @va: argument value
- * Return: number of digits;
- */
-int print_unsigned_octal(va_list va)
-{
-	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = 0;
-	int i = 0;
-	char buffer[100];
-
-	while (i < 100)
-	{
-		buffer[i] = ('0' + (n % 8));
-		n /= 8;
-		i++;
-	}
-
-	i -= 1;
-	while (i >= 0)
-	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				n_digit++;
-				_putchar(*(buffer + i));
-				i--;
-			}
-		}
-		i--;
-	}
-
-	return (n_digit);
-}
-
-/**
- * print_unsigned_hexadecimal - function to
- * print hexadecimal value
- * @va: argumant value
- * Return: integer
- */
-int print_unsigned_hexadecimal(va_list va)
-{
-	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = 0;
-	int i = 0;
-	int r = 0;
-	char buffer[100];
-
-	while (i < 100)
-	{
-		r = n % 16;
-		if (r < 10)
-			buffer[i] = '0' + r;
-		else
-			buffer[i] = 'a' + (r - 10);
-
-		n /= 16;
-		i++;
-	}
-
-	i -= 1;
-	while (i >= 0)
-	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				n_digit++;
-				_putchar(*(buffer + i));
-				i--;
-			}
-		}
-		i--;
-	}
-
-	return (n_digit);
-}
-
-/**
- * print_unsigned_Hexadecimal - function to
- * print hexadecimal value
- * @va: argumant value
- * Return: integer
- */
-int print_unsigned_Hexadecimal(va_list va)
-{
-	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = 0;
-	int i = 0;
-	int r = 0;
-	char buffer[100];
-
-	while (i < 100)
-	{
-		r = n % 16;
-		if (r < 10)
-			buffer[i] = '0' + r;
-		else
-			buffer[i] = 'A' + (r - 10);
-
-		n /= 16;
-		i++;
-	}
-
-	i -= 1;
-	while (i >= 0)
-	{
-		if (*(buffer + i) != '0')
-		{
-			while (i >= 0)
-			{
-				n_digit++;
-				_putchar(*(buffer + i));
-				i--;
-			}
-		}
-		i--;
-	}
-
-	return (n_digit);
+	return (counter);
 }
