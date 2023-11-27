@@ -25,18 +25,22 @@ int _printf(const char *format, ...)
 		i++;
 		formatFunctionPointer = find_format_function(format[i]);
 		if (formatFunctionPointer != NULL)
+		{
 			characterCount += formatFunctionPointer(argumentList);
+		}
 		else
 		{
 			if (format[i] == '\0')
 				return (-1);
 			if (format[i] == '%')
+			{
 				_putchar('%');
+			}
 			else
 			{
 				_putchar('%');
 				_putchar(format[i]);
-				characterCount++;
+				characterCount += 2;
 			}
 			characterCount++;
 		}
