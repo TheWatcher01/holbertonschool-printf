@@ -7,27 +7,24 @@
  */
 int print_int(va_list va)
 {
-	int n = va_arg(va, int);
-	int n_digit = 0;
-	char buffer[12];
-	int i = 0;
+	int n = va_arg(va, int), n_digit = 0, i = 0;
+	char buffer[1024];
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
 	}
-
 	n_digit = n_u_digit((unsigned int) n);
-
-	while (i < 12)
+	while (i < 1024)
 	{
 		buffer[i] = ('0' + (n % 10));
 		n /= 10;
+		if (n == 0)
+			break;
 		i++;
 	}
 
-	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
@@ -52,18 +49,18 @@ int print_int(va_list va)
 int print_unsigned_int(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = n_u_digit(n);
-	int i = 0;
-	char buffer[12];
+	int n_digit = n_u_digit(n), i = 0;
+	char buffer[1024];
 
-	while (i < 12)
+	while (i < 1024)
 	{
 		buffer[i] = ('0' + (n % 10));
 		n /= 10;
+		if (n == 0)
+			break;
 		i++;
 	}
 
-	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
@@ -88,18 +85,18 @@ int print_unsigned_int(va_list va)
 int print_unsigned_octal(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = 0;
-	int i = 0;
-	char buffer[100];
+	int n_digit = 0, i = 0;
+	char buffer[1024];
 
-	while (i < 100)
+	while (i < 1024)
 	{
 		buffer[i] = ('0' + (n % 8));
 		n /= 8;
+		if (n == 0)
+			break;
 		i++;
 	}
 
-	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
@@ -126,12 +123,10 @@ int print_unsigned_octal(va_list va)
 int print_unsigned_hexadecimal(va_list va)
 {
 	unsigned int n = va_arg(va, unsigned int);
-	int n_digit = 0;
-	int i = 0;
-	int r = 0;
-	char buffer[100];
+	int n_digit = 0, i = 0, r = 0;
+	char buffer[1024];
 
-	while (i < 100)
+	while (i < 1024)
 	{
 		r = n % 16;
 		if (r < 10)
@@ -140,10 +135,11 @@ int print_unsigned_hexadecimal(va_list va)
 			buffer[i] = 'a' + (r - 10);
 
 		n /= 16;
+		if (n == 0)
+			break;
 		i++;
 	}
 
-	i -= 1;
 	while (i >= 0)
 	{
 		if (*(buffer + i) != '0')
