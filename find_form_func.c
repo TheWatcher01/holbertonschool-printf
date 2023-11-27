@@ -20,8 +20,13 @@ int (*find_format_function(char formatCharacter))(va_list)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
-		{'d', print_integer}, /** view print_decimal function alternative  */
-		{'i', print_integer},
+		{'d', print_int}, /** view print_decimal function alternative  */
+		{'i', print_int},
+		{'u', print_unsigned_int},
+		{'o', print_unsigned_octal},
+		{'x', print_unsigned_hexadecimal},
+		{'X', print_unsigned_Hexadecimal},
+		{'p', print_address},
 		{'\0', NULL}
 	};
 

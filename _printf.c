@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list argumentList;
-	int i = 0, characterCount = 0,
+	int i = 0, characterCount = 0;
 	int (*formatFunctionPointer)(va_list) = NULL;
 
 	va_start(argumentList, format);
@@ -31,13 +31,14 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 				return (-1);
 			if (format[i] == '%')
-				characterCount += _putchar('%');
+				_putchar('%');
 			else
 			{
 				_putchar('%');
 				_putchar(format[i]);
-				characterCount += 2;
+				characterCount++;
 			}
+			characterCount++;
 		}
 		i++;
 	}
