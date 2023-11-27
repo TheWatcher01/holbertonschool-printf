@@ -1,24 +1,18 @@
 #include "main.h"
 /**
  * _printf - Prints formatted output to the standard output
- * based on the specified format string and arguments.
  * @format: The format string containing format specifiers.
- * @...: The variable arguments to be printed according to format specifiers
  * Return: The number of characters printed or -1 if the format string is NULL
  */
 int _printf(const char *format, ...)
 {
 	va_list argumentList;
-	int i = 0;
-	int characterCount = 0;
+	int i = 0, characterCount = 0,
 	int (*formatFunctionPointer)(va_list) = NULL;
 
 	va_start(argumentList, format);
-
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -28,24 +22,16 @@ int _printf(const char *format, ...)
 			characterCount++;
 			continue;
 		}
-
 		i++;
 		formatFunctionPointer = find_format_function(format[i]);
-
 		if (formatFunctionPointer != NULL)
-		{
 			characterCount += formatFunctionPointer(argumentList);
-		}
 		else
 		{
 			if (format[i] == '\0')
-			{
 				return (-1);
-			}
 			if (format[i] == '%')
-			{
 				characterCount += _putchar('%');
-			}
 			else
 			{
 				_putchar('%');

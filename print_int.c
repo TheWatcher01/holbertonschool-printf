@@ -7,7 +7,9 @@
 int print_integer(va_list args)
 {
 	int integerValue = va_arg(args, int);
-	unsigned int absoluteValue = integerValue, currentDigit = absoluteValue, counter = 0, digitCount = 1;
+	unsigned int absoluteValue = integerValue;
+	unsigned int currentDigit = absoluteValue;
+	unsigned int  counter = 0, digitCount = 1;
 
 	if (integerValue < 0)
 	{
