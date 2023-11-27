@@ -31,6 +31,7 @@ int print_unsigned_Hexadecimal(va_list args);
 int print_address(va_list args);
 int print_unsigned_bin(va_list args);
 int n_u_digit(unsigned int n);
+int print_String(va_list);
 
 int _putchar(char c);
 
