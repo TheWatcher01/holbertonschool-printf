@@ -14,6 +14,7 @@ int print_int(va_list va)
 	{
 		_putchar('-');
 		n *= -1;
+		n_digit++;
 	}
 	n_digit = n_u_digit((unsigned int) n);
 	while (i < 1024)
