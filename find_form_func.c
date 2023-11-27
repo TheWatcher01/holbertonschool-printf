@@ -20,7 +20,7 @@ int (*find_format_function(char formatCharacter))(va_list)
 		{'c', print_character}, {'s', print_string},
 		{'%', print_percent}, {'d', print_int},
 		{'i', print_int}, {'b', print_unsigned_bin},
-		{'u', print_unsigned_int},
+		{'u', print_unsigned_int}, {'S', print_String},
 		{'o', print_unsigned_octal},
 		{'x', print_unsigned_hexadecimal},
 		{'X', print_unsigned_Hexadecimal},

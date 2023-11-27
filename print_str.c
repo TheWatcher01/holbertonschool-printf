@@ -43,7 +43,7 @@ int print_string(va_list args)
  */
 int print_String(va_list va)
 {
-	char *string = va_arg(args, char *);
+	char *string = va_arg(va, char *);
 	int counter = 0;
 
 	if (string == NULL)
@@ -59,7 +59,7 @@ int print_String(va_list va)
 			_putchar('x');
 			_putchar('0');
 			counter += 2;
-			counter += _print("%X", *string);
+			counter += _printf("%X", *string);
 		}
 		else
 		{
