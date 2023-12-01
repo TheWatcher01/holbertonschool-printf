@@ -3,15 +3,14 @@
 /**
  * print_string - Prints a null-terminated string to the standard output.
  *
- * @args: The argument list containing the string to print.
+ * @va: The argument list containing the string to print.
  *
  * Return: The length of the printed string.
  */
-
-int print_string(va_list args)
+int print_string(va_list va)
 {
 	/** Extract the string to print from the argument list*/
-	char *string = va_arg(args, char *);
+	char *string = va_arg(va, char *);
 
 	/** Initialize a counter to track the number of characters printed*/
 	int counter = 0;
@@ -34,7 +33,6 @@ int print_string(va_list args)
 	return (counter);
 }
 
-#include "main.h"
 
 /**
  * print_String - Prints a null-terminated string to the standard output.
