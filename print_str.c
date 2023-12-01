@@ -34,10 +34,12 @@ int print_string(va_list args)
 	return (counter);
 }
 
+#include "main.h"
+
 /**
- * print_Sring - Prints a null-terminated string to the standard output.
+ * print_String - Prints a null-terminated string to the standard output.
  * with special print for non printable char.
- * @args: The argument list containing the string to print.
+ * @va: The argument list containing the string to print.
  *
  * Return: The length of the printed string.
  */

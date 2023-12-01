@@ -58,7 +58,7 @@ int print_address(va_list va)
 /**
  * print_unsigned_bin - print unsigned int in binary
  * @va: arguments
- * @Return: number characters printed
+ * Return: number characters printed
  */
 int print_unsigned_bin(va_list va)
 {
